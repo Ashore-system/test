@@ -3,7 +3,7 @@ name: Test and Lint HTML
 on:
   push:
     branches:
-      - master  # This action will run on every push to the 'main' branch
+      - master  # This action will run on every push to the 'master' branch
 
 jobs:
   test:
@@ -27,7 +27,8 @@ jobs:
 
       # Step 4: Lint HTML files
       - name: Lint HTML files
-        run: npm run lint
+        run: |
+          npm run lint
 
       # Step 5: Start a local web server (if needed for testing)
       - name: Start a web server
@@ -37,4 +38,5 @@ jobs:
 
       # Step 6: Run Cypress tests
       - name: Run Cypress tests
-        run: npm run test
+        run: |
+          npm run test
