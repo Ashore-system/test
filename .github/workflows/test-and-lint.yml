@@ -3,7 +3,7 @@ name: Test and Lint HTML
 on:
   push:
     branches:
-      - main  # This action will run on every push to the 'main' branch
+      - master  # This action will run on every push to the 'main' branch
 
 jobs:
   test:
