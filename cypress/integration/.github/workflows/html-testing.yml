@@ -1,0 +1,39 @@
+name: HTML Code Testing
+
+on:
+  push:
+    branches:
+      - main  # Change to your branch name if different
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'  # Specify the version of Node.js you need
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Lint HTML files
+      - name: Lint HTML files
+        run: npm run lint
+
+      # Step 5: Start a local web server (if needed for testing)
+      - name: Start a web server
+        run: |
+          python3 -m http.server 8080 &
+        working-directory: ./
+
+      # Step 6: Run Cypress tests
+      - name: Run Cypress tests
+        run: npm run test

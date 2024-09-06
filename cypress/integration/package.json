@@ -1,0 +1,15 @@
+{
+  "name": "html-testing",
+  "version": "1.0.0",
+  "description": "A project for testing HTML code",
+  "main": "index.js",
+  "scripts": {
+    "lint": "htmlhint '**/*.html'",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.14.2",
+    "htmlhint": "^1.1.4"
+  }
+}
+
